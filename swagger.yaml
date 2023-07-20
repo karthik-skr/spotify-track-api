@@ -1,0 +1,169 @@
+openapi: 3.0.0
+info:
+  title: Spotify Track API
+  version: 1.0.0
+  description: API for storing metadata of music tracks to a Relational Database and fetching metadata from the external Spotify API.
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: Tracks
+    description: APIs for managing music tracks
+  - name: Search
+    description: APIs for to do search on Spotify (Please pass test-api-key as x-api-key for authentication)
+paths:
+  /tracks:
+    post:
+      summary: Create a new track in the database based on the provided ISRC
+      tags:
+        - Tracks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isrc:
+                  type: string
+                  example: "INS172301151"
+      responses:
+        '200':
+          description: Track created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Track'
+        '500':
+          description: Failed to create track
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /tracks/{isrc}:
+    get:
+      summary: Retrieve a track from the database based on the provided ISRC
+      tags:
+        - Tracks
+      parameters:
+        - in: path
+          name: isrc
+          required: true
+          description: ISRC of the track to retrieve
+          schema:
+            type: string
+            example: "USUG12301639"
+      responses:
+        '200':
+          description: Track metadata retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Track'
+        '404':
+          description: Track not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /tracks-by-artist:
+    get:
+      summary: Retrieve all tracks from the database that are associated with a specific artist
+      tags:
+        - Tracks
+      parameters:
+        - in: query
+          name: artist
+          required: true
+          description: Name of the artist to filter tracks
+          schema:
+            type: string
+            example: "sid sriram"
+      responses:
+        '200':
+          description: Tracks retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Track'
+        '500':
+          description: Failed to retrieve tracks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /search-tracks:
+    get:
+      security: 
+        - ApiKeyAuth: []
+      summary: Search tracks by query on Spotify(This is implemented to get ISRC)
+      tags:
+        - Search
+      parameters:
+        - in: query
+          name: query
+          required: true
+          description: Search query for tracks on Spotify
+          schema:
+            type: string
+            example: "sid sriram"
+      responses:
+        '200':
+          description: Tracks retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '500':
+          description: Failed to search tracks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '401':
+          description: "Unauthorized: Invalid API key"
+components:
+  schemas:
+    Track:
+      type: object
+      properties:
+        isrc:
+          type: string
+        title:
+          type: string
+        imageUri:
+          type: string
+        artists:
+          type: array
+          items:
+            $ref: '#/components/schemas/Artist'
+
+    Artist:
+      type: object
+      properties:
+        name:
+          type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      summary: Please pass test-api-key as x-api-key for authentication
+
