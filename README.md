@@ -28,12 +28,12 @@ The API is documented using Swagger.io. You can check the API documentation [her
   ```
 
 #### 2. Set up the database:
-- Create a database (e.g., PostgreSQL, MySQL, etc.) for the API.
-- Update the database credentials in the config/config.js file.
-- Obtain a Spotify API Client ID and Client Secret:
+- Create a MySQL database for the API.
+- Update the database credentials in the .env file.
 
-#### 3. Create a developer account at Spotify: https://developer.spotify.com/
-   
+#### 3. Obtain a Spotify API Client ID and Client Secret: 
+
+- Create a developer account at Spotify: https://developer.spotify.com/ 
 - Follow the Spotify documentation to obtain the Client ID and Client Secret for the API.
 
 
