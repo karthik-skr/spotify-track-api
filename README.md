@@ -14,7 +14,7 @@ The API is documented using Swagger.io. You can check the API documentation [her
 
 ## Installation & Setup
 
-1. Clone the repository:
+#### 1. Clone the repository:
 
   ```bash
   git clone https://github.com/your-username/spotify-track-api.git
@@ -27,18 +27,19 @@ The API is documented using Swagger.io. You can check the API documentation [her
   npm install
   ```
 
-2. Set up the database:
+#### 2. Set up the database:
 - Create a database (e.g., PostgreSQL, MySQL, etc.) for the API.
 - Update the database credentials in the config/config.js file.
 - Obtain a Spotify API Client ID and Client Secret:
 
-3. Create a developer account at Spotify: https://developer.spotify.com/
+#### 3. Create a developer account at Spotify: https://developer.spotify.com/
    
 - Follow the Spotify documentation to obtain the Client ID and Client Secret for the API.
-- Set up environment variables:
 
-4. Create a .env file in the root directory of the project.
+
+#### 4. Set up environment variables:
    
+- Create a .env file in the root directory of the project. 
 - Add the following environment variables to the .env file:
 
   ```bash
