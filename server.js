@@ -1,10 +1,13 @@
 require('dotenv').config();
 const express = require("express");
+const cors = require('cors')
 const tracksController = require('./controllers/tracks.controller');
 const {authenticateApiKey} = require("./middleware/auth.middleware");
 const setupSwagger = require('./swagger');
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 
