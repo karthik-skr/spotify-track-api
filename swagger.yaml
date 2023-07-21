@@ -55,7 +55,7 @@ paths:
           description: ISRC of the track to retrieve
           schema:
             type: string
-            example: "USUG12301639"
+            example: "INS172301151"
       responses:
         '200':
           description: Track metadata retrieved successfully

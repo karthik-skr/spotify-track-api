@@ -25,6 +25,11 @@ const PORT = process.env.PORT || 8080;
 
 setupSwagger(app);
 
+// Define a route for the root path
+app.get('/', (req, res) => {
+  res.redirect("/api-docs");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
