@@ -17,7 +17,7 @@ The API is documented using Swagger.io. You can check the API documentation [her
 #### 1. Clone the repository:
 
   ```bash
-  git clone https://github.com/your-username/spotify-track-api.git
+  git clone https://github.com/karthik-skr/spotify-track-api.git
   ```
 
   Navigate to the project directory and install dependencies:
