@@ -34,7 +34,7 @@ The API is documented using Swagger.io. You can check the API documentation [her
 #### 3. Obtain a Spotify API Client ID and Client Secret: 
 
 - Create a developer account at Spotify: https://developer.spotify.com/ 
-- Follow the Spotify documentation to obtain the Client ID and Client Secret for the API.
+- Follow the [Spotify documentation](https://developer.spotify.com/documentation/web-api/tutorials/getting-started) to obtain the Client ID and Client Secret for the API.
 
 
 #### 4. Set up environment variables:
