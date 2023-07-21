@@ -10,7 +10,7 @@ The API is implemented using Node.js with Express.js as the lightweight framewor
 
 ## API Documentation
 
-The API is documented using Swagger.io. You can check the API documentation [here](https://github.com/karthik-skr/spotify-track-api/files/12112740/api_doc.pdf)
+The API is documented using Swagger.io. You can check the API documentation [here](https://github.com/karthik-skr/spotify-track-api/files/12116961/api_doc_v1.pdf)
 
 ## Installation & Setup
 
@@ -62,8 +62,9 @@ npm start
 
 ## API Endpoints
 
-![api_doc](https://github.com/karthik-skr/spotify-track-api/assets/33262979/04aa60a8-a896-435d-a163-ebf8e6435921)
+![api_doc](https://github.com/karthik-skr/spotify-track-api/assets/33262979/2f6205e7-baaa-4a25-a25d-af3f143c9ab9)
 
 ## Contact
+
 For any inquiries, please contact karthik.skreddy24@gmail.com
 
