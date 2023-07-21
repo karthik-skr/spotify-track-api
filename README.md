@@ -66,5 +66,5 @@ npm start
 
 ## Contact
 
-For any inquiries, please contact karthik.skreddy24@gmail.com
+For any inquiries, please contact on [LinkedIn](https://www.linkedin.com/in/karthik-reddy-s-92a727b5)
 
