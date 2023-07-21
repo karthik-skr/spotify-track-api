@@ -11,7 +11,7 @@ tags:
   - name: Search
     description: APIs for to do search on Spotify (Please pass test-api-key as x-api-key for authentication)
 paths:
-  /tracks:
+  /api/tracks:
     post:
       summary: Create a new track in the database based on the provided ISRC
       tags:
@@ -43,7 +43,7 @@ paths:
                   error:
                     type: string
 
-  /tracks/{isrc}:
+  /api/tracks/{isrc}:
     get:
       summary: Retrieve a track from the database based on the provided ISRC
       tags:
@@ -73,7 +73,7 @@ paths:
                   error:
                     type: string
 
-  /tracks-by-artist:
+  /api/tracks-by-artist:
     get:
       summary: Retrieve all tracks from the database that are associated with a specific artist
       tags:
@@ -104,7 +104,7 @@ paths:
                 properties:
                   error:
                     type: string
-  /search-tracks:
+  /api/search-tracks:
     get:
       security: 
         - ApiKeyAuth: []

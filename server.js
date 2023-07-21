@@ -9,16 +9,16 @@ const app = express();
 app.use(express.json());
 
 // Endpoint for creating a track
-app.post('/tracks', tracksController.createTrack);
+app.post('/api/tracks', tracksController.createTrack);
 
 // Endpoint for retrieving track metadata by ISRC
-app.get('/tracks/:isrc', tracksController.getTrackByISRC);
+app.get('/api/tracks/:isrc', tracksController.getTrackByISRC);
 
 // Endpoint for retrieving track metadata by artist name
-app.get('/tracks-by-artist', tracksController.getTracksByArtist);
+app.get('/api/tracks-by-artist', tracksController.getTracksByArtist);
 
 // endpoint for searching tracks from Spotify
-app.get('/search-tracks', authenticateApiKey ,tracksController.searchTracks);
+app.get('/api/search-tracks', authenticateApiKey ,tracksController.searchTracks);
 
 
 const PORT = process.env.PORT || 8080;

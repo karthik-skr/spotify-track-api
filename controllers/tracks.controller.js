@@ -36,7 +36,12 @@ exports.createTrack = async (req, res) => {
       artists.map((artist) => ({ name: artist.name, trackIsrc: createdTrack.isrc }))
     );
 
-    res.json(createdTrack);
+    const trackWithArtists = await Track.findByPk(createdTrack.isrc, {
+        include: [{ model: Artist, as: 'artists',attributes: ["name"] }],
+        attributes: ["isrc","title","imageUri"]
+    });
+
+    res.json(trackWithArtists);
   } catch (error) {
     if(error?.original?.code == "ER_DUP_ENTRY"){
         return res.status(500).json({ error: "The requested track data already added to the database" });
