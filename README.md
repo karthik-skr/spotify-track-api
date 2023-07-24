@@ -62,7 +62,8 @@ npm start
 
 ## API Endpoints
 
-![api_doc](https://github.com/karthik-skr/spotify-track-api/assets/33262979/2f6205e7-baaa-4a25-a25d-af3f143c9ab9)
+![api_doc](https://github.com/karthik-skr/spotify-track-api/assets/33262979/3c1f4c35-ae09-4710-ba5b-5b2d1836c78e)
+
 
 ## Contact
 
